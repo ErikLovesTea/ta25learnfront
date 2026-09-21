@@ -1,4 +1,5 @@
-import fs from 'fs';
+import { add } from 'mathjs';
 
-let text = fs.readFileSync('index.js', 'utf-8');
-console.log(text);
+let answer = add(4, 5);
+export { answer };
+console.log(answer);
