@@ -2,25 +2,24 @@
 import { ref } from 'vue';
 import Tabs from './components/Tabs.vue';
 
+import ToDo from './pages/ToDo.vue';
+import Modals from './pages/Modals.vue';
+
 let tabTitles = ref([
-  'Item 1',
-  'Item 2',
-  'Item 3',
-  'Item 4',
+  'ToDo',
+  'Modals',
 ]);
 let activeTab = ref(0);
 let contents = [
-  'Content 1',
-  'Content 2',
-  'Content 3',
-  'Content 4',
+  ToDo,
+  Modals,
 ];
 </script>
 
 <template>
   <Tabs :titles="tabTitles" :active="activeTab" @change="activeTab = $event"></Tabs>
   <div class="container content mt-3">
-    <h1>{{ contents[activeTab] }}</h1>
+    <component :is="contents[activeTab]"></component>
   </div>
 </template>
 
