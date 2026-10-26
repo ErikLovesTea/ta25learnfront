@@ -1,5 +1,6 @@
 <script setup>
 defineProps(['active']);
+defineEmits(['close']);
 </script>
 <template>
     <div class="modal" :class="{ 'is-active': active }">
